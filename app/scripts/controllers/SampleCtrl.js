@@ -16,7 +16,7 @@ angular.module('AngularConferencePlanning')
           title: 'Monitorer ses logs avec Elastic Search et Kibana',
           place: 'Grand Amphitheatre',
           from: '2015-04-12T11:00:00.000Z',
-          to: '2015-04-12T12:00:00.000Z',
+          to: '2015-04-12T13:00:00.000Z',
           icon: 'picture2.png'
         },
         {
@@ -35,7 +35,7 @@ angular.module('AngularConferencePlanning')
         }
       ],
       options: {
-        oneHourSlotPxSize: '100'
+        oneHourSlotPxSize: '200'
       }
     });
   });
