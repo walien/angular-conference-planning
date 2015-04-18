@@ -13,7 +13,6 @@ angular.module('AngularConferencePlanning')
       var eventEnd = moment(_event.to);
 
       var elapsedSeconds = eventEnd.diff(eventStart, 'seconds');
-      console.log(elapsedSeconds);
 
       // By default a slot of 3600 seconds is represented by 200px (may be configured)
       // 200 px => 3600 seconds
