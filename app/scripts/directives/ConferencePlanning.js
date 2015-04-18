@@ -54,6 +54,10 @@ angular.module('AngularConferencePlanning')
         var fromStr = from.format('YYYY-MM-DD');
         var toStr = to.format('YYYY-MM-DD');
 
+        if (from.isAfter(to)) {
+          throwInvalidEventDef(_event, 'event.from > event.to');
+        }
+
         // Event is not on the same day
         if (fromStr != toStr) {
           // TODO
