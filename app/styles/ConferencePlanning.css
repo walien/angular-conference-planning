@@ -1,0 +1,57 @@
+.y-scrollable {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.no-scroll {
+  /*position: absolute;*/
+}
+
+.axes-y {
+  white-space: nowrap;
+  margin-left: 150px;
+}
+
+.axes-x {
+  position: relative;
+}
+
+.date-picker {
+  padding-right: 10px;
+}
+
+.time-slot {
+  display: inline-block;
+  border-radius: 3px;
+  border: 1px grey solid;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.lane {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.events {
+  /*Nothing*/
+}
+
+.place {
+  width: 150px;
+}
+
+.event {
+  left: 0;
+  right: 0;
+  position: absolute !important;
+  border: 1px #0040D0 solid;
+  border-radius: 3px;
+}
+
+.event .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
