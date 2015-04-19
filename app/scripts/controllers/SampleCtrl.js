@@ -63,7 +63,7 @@ angular.module('AngularConferencePlanning')
           title: 'Docker on the rocks',
           type: 'hands-on',
           speaker: 'John Doe',
-          place: 'Amphitheatre A',
+          place: 'Amphitheatre B',
           from: '2015-04-13T11:00:00.000+0200',
           to: '2015-04-13T12:00:00.000+0200',
           icon: 'picture3.png'
