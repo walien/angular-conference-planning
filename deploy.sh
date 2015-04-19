@@ -5,6 +5,7 @@ git checkout gh-pages
 mkdir build
 git clone -b master git@github.com:walien/angular-conference-planning.git build/
 cp -R build/app/* .
+rm -rf build
 git add .
 git commit -m 'Auto deploy'
 git push -u origin gh-pages
