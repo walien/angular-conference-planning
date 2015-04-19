@@ -6,11 +6,38 @@ angular.module('AngularConferencePlanning')
     angular.extend($scope, {
       eventsList: [
         {
+          title: 'Introduction à l\'histoire des sciences',
+          type: 'quickie',
+          speaker: 'Gérard Blanchard',
+          place: 'Amphitheatre A',
+          from: '2015-04-12T08:00:00.000+0200',
+          to: '2015-04-12T10:10:00.000+0200',
+          icon: 'picture1.png'
+        },
+        {
+          title: 'Live coding Restx (Java) / AngularJS',
+          type: 'university',
+          speaker: 'Gérard Blanchard',
+          place: 'Amphitheatre B',
+          from: '2015-04-12T09:00:00.000+0200',
+          to: '2015-04-12T11:20:00.000+0200',
+          icon: 'picture1.png'
+        },
+        {
+          title: 'Histoire Mérovingienne',
+          type: 'hands-on',
+          speaker: 'Hugh Capet',
+          place: 'Amphitheatre C',
+          from: '2015-04-12T06:00:00.000+0200',
+          to: '2015-04-12T09:30:00.000+0200',
+          icon: 'picture1.png'
+        },
+        {
           title: 'De Zero à Héro avec Spring Boot',
           type: 'university',
           speaker: 'Léon Blum',
           place: 'Grand Amphitheatre',
-          from: '2015-04-12T09:00:00.000+0200',
+          from: '2015-04-12T07:00:00.000+0200',
           to: '2015-04-12T10:20:00.000+0200',
           icon: 'picture1.png'
         },
