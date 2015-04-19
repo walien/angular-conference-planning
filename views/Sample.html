@@ -4,55 +4,105 @@
 
   <p>Here, a sample of the conference-planning angular component.</p>
 
+  <p><b>Rendering :</b></p>
+
+  <conference-planning events="eventsList" options="options">
+    <event>
+      <span class="title">{{ event.title }}</span> <br/>
+      <span class="speaker">{{ event.speaker }}</span>
+    </event>
+  </conference-planning>
+
   <p><b>JS</b></p>
     <pre>
 
         $scope.eventsList = [
-          {
-            title: 'De Zero à Héro avec Spring Boot',
-            place: 'Grand Amphitheatre',
-            from: '2015-04-12T09:00:00.000Z',
-            to: '2015-04-12T10:00:00.000Z',
-            icon: 'picture1.png'
-          },
-          {
-            title: 'Monitorer ses logs avec Elastic Search et Kibana',
-            place: 'Grand Amphitheatre',
-            from: '2015-04-12T11:00:00.000Z',
-            to: '2015-04-12T13:00:00.000Z',
-            icon: 'picture2.png'
-          },
-          {
-            title: 'Cloud direct with Docker',
-            place: 'Amphitheatre A',
-            from: '2015-04-12T11:00:00.000Z',
-            to: '2015-04-12T12:00:00.000Z',
-            icon: 'picture3.png'
-          },
-          {
-            title: 'Cloud direct with Docker 2',
-            place: 'Amphitheatre A',
-            from: '2015-04-13T11:00:00.000Z',
-            to: '2015-04-13T12:00:00.000Z',
-            icon: 'picture3.png'
-          }
+          eventsList: [
+            {
+              title: 'Introduction à l\'histoire des sciences',
+              type: 'quickie',
+              speaker: 'Gérard Blanchard',
+              place: 'Amphitheatre A',
+              from: '2015-04-12T08:00:00.000+0200',
+              to: '2015-04-12T10:10:00.000+0200',
+              icon: 'picture1.png'
+            },
+            {
+              title: 'Live coding Restx (Java) / AngularJS',
+              type: 'university',
+              speaker: 'Gérard Blanchard',
+              place: 'Amphitheatre B',
+              from: '2015-04-12T09:00:00.000+0200',
+              to: '2015-04-12T11:20:00.000+0200',
+              icon: 'picture1.png'
+            },
+            {
+              title: 'Histoire Mérovingienne',
+              type: 'hands-on',
+              speaker: 'Hugh Capet',
+              place: 'Amphitheatre C',
+              from: '2015-04-12T06:00:00.000+0200',
+              to: '2015-04-12T09:30:00.000+0200',
+              icon: 'picture1.png'
+            },
+            {
+              title: 'De Zero à Héro avec Spring Boot',
+              type: 'university',
+              speaker: 'Léon Blum',
+              place: 'Grand Amphitheatre',
+              from: '2015-04-12T07:00:00.000+0200',
+              to: '2015-04-12T10:20:00.000+0200',
+              icon: 'picture1.png'
+            },
+            [ ... ]
         ];
 
         $scope.options = {
-            oneHourSlotPxSize: '100'
+            oneHourSlotSize: '100px',
+            eventClasses: function (event) {
+              return [event.type];
+            }
         };
 
     </pre>
   <p><b>HTML :</b></p>
+
+    Access the current event, with the scope attribute named "event" :
     <pre>
 
-        &lt;conference-planning events="eventsList" options="options"&gt;&lt;/conference-planning&gt;
+      &lt;conference-planning events="eventsList" options="options"&gt;
+        &lt;event&gt;
+            &lt;span class="title"&gt;&#123; event.title &#125;&lt;/span&gt;
+            &lt;span class="speaker"&gt;&#123; event.speaker &#125;&lt;/span&gt;
+        &lt;/event&gt;
+      &lt;/conference-planning&gt;
 
     </pre>
 
-  <p><b>Rendering :</b></p>
+  <p><b>CSS :</b></p>
+    <pre>
+      .hands-on {
+        background-color: cornflowerblue;
+      }
 
-  <conference-planning events="eventsList" options="options"></conference-planning>
+      .university {
+        background-color: #eb9316;
+      }
+
+      .quickie {
+        background-color: forestgreen;
+      }
+
+      .event .title {
+        padding-left: 15px;
+        font-weight: bold;
+      }
+
+      .event .speaker {
+        padding-left: 15px;
+      }
+
+    </pre>
 
   <div style="height: 50px"></div>
 

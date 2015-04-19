@@ -7,6 +7,30 @@ angular.module('AngularConferencePlanning')
       throw new Error('invalid event definition (' + cause + ') => ' + JSON.stringify(_event));
     };
 
+    var throwInvalidOptions = function (cause) {
+      throw new Error('invalid provided options (' + cause + ')');
+    };
+
+    var prepareOptions = function (_options) {
+
+      if (!_options) _options = {};
+      if (!_options.eventClasses) _options.eventClasses = function () {
+        return [];
+      };
+      if (!_options.slots) _options.slots = {};
+      if (!_options.slots.from) _options.slots.from = 8;
+      if (!_options.slots.to) _options.slots.to = 19;
+
+      if (!_options.oneHourSlotSize) _options.oneHourSlotSize = '200px';
+      if (_.endsWith(_options.oneHourSlotSize, 'px')) {
+        _options.oneHourSlotSize = _options.oneHourSlotSize.replace('px', '');
+      } else {
+        throwInvalidOptions('bad provided oneHourSlotSize option, px size supported only');
+      }
+
+      return _options;
+    };
+
     var computeWidth = function (_event, options) {
 
       var eventStart = moment(_event.from);
@@ -17,7 +41,7 @@ angular.module('AngularConferencePlanning')
       // By default a slot of 3600 seconds is represented by 200px (may be configured)
       // 200 px => 3600 seconds
       // ?   px => { elapsedSeconds } seconds
-      return (options.oneHourSlotPxSize * elapsedSeconds) / 3600;
+      return (options.oneHourSlotSize * elapsedSeconds) / 3600;
     };
 
     var computeMargin = function (_event, options) {
@@ -30,7 +54,7 @@ angular.module('AngularConferencePlanning')
       // By default a slot of 3600 seconds is represented by 200px (may be configured)
       // 200 px => 3600 seconds
       // ?   px => { elapsedSeconds } seconds
-      return ((options.oneHourSlotPxSize * elapsedSeconds) / 3600) + 150;
+      return ((options.oneHourSlotSize * elapsedSeconds) / 3600) + 150;
     };
 
     var transform = function (_events) {
@@ -74,12 +98,26 @@ angular.module('AngularConferencePlanning')
       return model;
     };
 
+    var buildAxes = function (scope) {
+      scope.axes = {
+        X: []
+      };
+
+      var from = scope.options.slots.from;
+      var to = scope.options.slots.to;
+      for (var i = from; i <= to;) {
+        scope.axes.X.push(i++);
+      }
+    };
+
     return {
       scope: {
         events: '=',
         options: '='
       },
+      restrict: 'EA',
       templateUrl: 'views/ConferencePlanning.html',
+      transclude: true,
       controller: function ($scope) {
 
         $scope.loadDate = function (date) {
@@ -107,21 +145,9 @@ angular.module('AngularConferencePlanning')
       },
       link: function (scope) {
 
-        if (!scope.options) scope.options = {};
-        if (!scope.options.oneHourSlotPxSize) scope.options.oneHourSlotPxSize = 200;
-        if (!scope.options.slots) scope.options.slots = {};
-        if (!scope.options.slots.from) scope.options.slots.from = 8;
-        if (!scope.options.slots.to) scope.options.slots.to = 19;
+        scope.options = prepareOptions(scope.options);
 
-        scope.axes = {
-          X: []
-        };
-
-        var from = scope.options.slots.from;
-        var to = scope.options.slots.to;
-        for (var i = from; i <= to;) {
-          scope.axes.X.push(i++);
-        }
+        buildAxes(scope);
       }
     };
 
