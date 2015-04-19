@@ -67,6 +67,24 @@ angular.module('AngularConferencePlanning')
           from: '2015-04-13T11:00:00.000+0200',
           to: '2015-04-13T12:00:00.000+0200',
           icon: 'picture3.png'
+        },
+        {
+          title: 'Deploy faster on GAE',
+          type: 'hands-on',
+          speaker: 'Richard Johns',
+          place: 'Amphitheatre A',
+          from: '2015-04-13T08:00:00.000+0200',
+          to: '2015-04-13T11:30:00.000+0200',
+          icon: 'picture3.png'
+        },
+        {
+          title: 'Marionette for dumies',
+          type: 'university',
+          speaker: 'John Doe',
+          place: 'Grand Amphitheatre',
+          from: '2015-04-13T07:00:00.000+0200',
+          to: '2015-04-13T12:00:00.000+0200',
+          icon: 'picture3.png'
         }
       ],
       options: {
