@@ -1,15 +1,13 @@
 #!/bin/bash
 
-git checkout -b gh-pages
-git checkout gh-pages
 mkdir build
-git clone -b master git@github.com:walien/angular-conference-planning.git build/
-cp -R build/app/* .
-rm -rf build
+git clone -b gh-pages git@github.com:walien/angular-conference-planning.git build/
+cp -Rf app/* build/
+cd build
 git add .
 git commit -m 'Auto deploy'
-git push -u origin gh-pages
+git push
+cd ..
 rm -rf build
-git checkout master
 
 
