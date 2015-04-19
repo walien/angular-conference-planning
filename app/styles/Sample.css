@@ -1,0 +1,20 @@
+.hands-on {
+  background-color: cornflowerblue;
+}
+
+.university {
+  background-color: #eb9316;
+}
+
+.quickie {
+  background-color: forestgreen;
+}
+
+.event .title {
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+.event .speaker {
+  padding-left: 15px;
+}
