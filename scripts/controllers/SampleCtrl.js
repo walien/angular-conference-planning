@@ -82,7 +82,7 @@ angular.module('AngularConferencePlanning')
           type: 'university',
           speaker: 'John Doe',
           place: 'Grand Amphitheatre',
-          from: '2015-04-13T07:00:00.000+0200',
+          from: '2015-04-13T08:00:00.000+0200',
           to: '2015-04-13T12:00:00.000+0200',
           icon: 'picture3.png'
         }
