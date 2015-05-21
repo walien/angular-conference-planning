@@ -28,7 +28,7 @@ angular.module('AngularConferencePlanning')
           type: 'hands-on',
           speaker: 'Hugh Capet',
           place: 'Amphitheatre C',
-          from: '2015-04-12T06:00:00.000+0200',
+          from: '2015-04-12T08:00:00.000+0200',
           to: '2015-04-12T09:30:00.000+0200',
           icon: 'picture1.png'
         },
@@ -37,7 +37,7 @@ angular.module('AngularConferencePlanning')
           type: 'university',
           speaker: 'Léon Blum',
           place: 'Grand Amphitheatre',
-          from: '2015-04-12T07:00:00.000+0200',
+          from: '2015-04-12T08:00:00.000+0200',
           to: '2015-04-12T10:20:00.000+0200',
           icon: 'picture1.png'
         },
