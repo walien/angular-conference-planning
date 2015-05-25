@@ -1,7 +1,17 @@
+@import url(http://fonts.googleapis.com/css?family=Dosis);
+
+.container-planning { 
+    position: relative;
+    font-family: 'Dosis', sans-serif;
+}
+
 .y-scrollable {
-  overflow: auto;
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
+  overflow-x: auto;
+  margin-left: 170px;
 }
 
 .no-scroll {
@@ -10,36 +20,96 @@
 
 .axes-y {
   white-space: nowrap;
-  margin-left: 150px;
+  margin-bottom: 10px;
 }
 
 .axes-x {
   position: relative;
+  margin-left: -145px;
 }
 
 .date-picker {
-  padding-right: 10px;
+    border-radius: 100px;
+    padding: 5px 15px;
+    background: #ededed;
+    cursor: pointer;
+    font-size: 11px;
+    margin-right: 5px;
+}
+
+.date-picker:hover {
+    transition: 300ms;
+    background: #dc2e2e;
+}
+
+.date-picker a {
+    color: white;
 }
 
 .time-slot {
+  position: relative;
   display: inline-block;
   border-radius: 3px;
   border: 1px grey solid;
   text-align: center;
   white-space: nowrap;
+  border: none;
+  background: #525657;
+  color: white;
+  font-weight: bold;
+  border-radius: 0;
+  margin: 0 5px;
+}
+
+.time-slot:after {
+    position: absolute;
+    bottom: -13px;
+    content: '\25BC';
+    font-size: 15px;
+    color: #525657; 
+      left: 92px;
 }
 
 .lane {
-  padding-bottom: 25px;
-  padding-top: 5px;
+    min-height: 40px;
+      margin: 5px 0px;
 }
 
+.col-place {
+    position: relative;
+  width: 155px;
+  height: 40px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+.col-place:first-child {
+    margin-top: -15px !important ;
+}
 .events {
   /*Nothing*/
 }
 
 .place {
+  display: block;
+  min-height: 40px;
   width: 150px;
+  padding-top: 11px;
+  background: #525657;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  z-index: 99999;
+}
+
+.arrow {
+  position: absolute;
+  display: block;
+  background: url('../images/arrow.png') no-repeat;
+  height: 40px;
+  width: 40px;
+  right: -35px;
+  top: 0;
 }
 
 .event {

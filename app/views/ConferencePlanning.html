@@ -1,8 +1,9 @@
-<div>
+<div class="container-planning">
 
   <span ng-repeat="date in model.dates" class="date-picker"><a href="" ng-click="loadDate(date)">{{ date }}</a></span>
 
   <br/><br/>
+    
 
   <div class="y-scrollable">
 
@@ -12,12 +13,11 @@
       </div>
     </div>
 
+
     <div class="axes-x">
-
       <div ng-repeat="(place, events) in lanes" class="lane">
-
-        <span class="place">{{ place }}</span>
-        <span ng-repeat="event in events" class="event" ng-class="options.eventClasses(event)" ng-style="computeEventStyle(event)">
+        
+        <span  data-sr="enter left, hustle 20px" ng-repeat="event in events" class="event" ng-class="options.eventClasses(event)" ng-style="computeEventStyle(event)">
 
           <div ng-transclude>
             <!--Template provided by the user is inserted here-->
@@ -30,5 +30,11 @@
     </div>
 
   </div>
+    
+    
+        <div ng-repeat="(place, events) in lanes" class="col-place">
+            <span class="place">{{ place }}</span>
+            <span class="arrow"></span>
+        </div>
 
 </div>

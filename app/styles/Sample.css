@@ -1,13 +1,19 @@
 .hands-on {
-  background-color: cornflowerblue;
+  background-color: #0092a1;
+  border: 0;
+    color: white;
 }
 
 .university {
-  background-color: #eb9316;
+  background-color: #dc2e2e;
+  color: white;
+    border: 0;
 }
 
 .quickie {
-  background-color: forestgreen;
+  background-color: #8dbd4f;
+    color: white;
+    border: none;
 }
 
 .event .title {
