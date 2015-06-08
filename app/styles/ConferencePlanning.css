@@ -6,12 +6,11 @@
 }
 
 .y-scrollable {
-  position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow-x: auto;
-  margin-left: 170px;
+  padding-left: 145px;
+  overflow: auto;
 }
 
 .no-scroll {
@@ -21,11 +20,17 @@
 .axes-y {
   white-space: nowrap;
   margin-bottom: 10px;
+  margin-left: 4px;
 }
 
 .axes-x {
   position: relative;
   margin-left: -145px;
+}
+
+.axes-w {
+    position: absolute;
+    left: 0;
 }
 
 .date-picker {
@@ -53,7 +58,8 @@
   border: 1px grey solid;
   text-align: center;
   white-space: nowrap;
-  border: none;
+  margin: 0 !important;
+  boder-left: 2px solid white !important;    
   background: #525657;
   color: white;
   font-weight: bold;
@@ -71,12 +77,13 @@
 }
 
 .lane {
+    display: flex;
     min-height: 40px;
-      margin: 5px 0px;
+    margin: 5px 0px;
 }
 
 .col-place {
-    position: relative;
+  position: relative;
   width: 155px;
   height: 40px;
   margin-top: -10px;
@@ -86,14 +93,15 @@
 .col-place:first-child {
     margin-top: -15px !important ;
 }
-.events {
-  /*Nothing*/
+.lane .event:first-child {
+  margin-left: 170px !important;
 }
 
 .place {
+  position: relative;
   display: block;
   min-height: 40px;
-  width: 150px;
+  width: 125px;
   padding-top: 11px;
   background: #525657;
   text-align: center;
@@ -102,13 +110,14 @@
   z-index: 99999;
 }
 
-.arrow {
+.place:after {
   position: absolute;
   display: block;
+    content: '';
   background: url('../images/arrow.png') no-repeat;
   height: 40px;
   width: 40px;
-  right: -35px;
+  right: -40px;
   top: 0;
 }
 
@@ -116,6 +125,28 @@
   left: 0;
   right: 0;
   position: absolute !important;
+    display: table-cell;
   border: 1px #0040D0 solid;
   border-radius: 3px;
+}
+
+.place-event {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    height: 25px;
+    width: auto;
+    background: white;
+    color: #525657;
+    border-radius: 100px;
+    padding: 5px 9px;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.place-fix {
+      display: block;
+      z-index: 999999;
+      margin-bottom: 6px;
+      height: 39px;
 }
