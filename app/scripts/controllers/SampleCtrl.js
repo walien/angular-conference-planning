@@ -9,7 +9,7 @@ angular.module('AngularConferencePlanning')
           title: 'Introduction à l\'histoire des sciences',
           type: 'quickie',
           speaker: 'Gérard Blanchard',
-          place: 'Amphitheatre A',
+          place: 'A',
           from: '2015-04-12T08:00:00.000+0200',
           to: '2015-04-12T10:10:00.000+0200',
           icon: 'picture1.png'
@@ -18,7 +18,7 @@ angular.module('AngularConferencePlanning')
           title: 'Live coding Restx (Java) / AngularJS',
           type: 'university',
           speaker: 'Gérard Blanchard',
-          place: 'Amphitheatre B',
+          place: 'B',
           from: '2015-04-12T09:00:00.000+0200',
           to: '2015-04-12T11:20:00.000+0200',
           icon: 'picture1.png'
@@ -27,7 +27,7 @@ angular.module('AngularConferencePlanning')
           title: 'Histoire Mérovingienne',
           type: 'hands-on',
           speaker: 'Hugh Capet',
-          place: 'Amphitheatre C',
+          place: 'C',
           from: '2015-04-12T08:00:00.000+0200',
           to: '2015-04-12T09:30:00.000+0200',
           icon: 'picture1.png'
@@ -36,7 +36,7 @@ angular.module('AngularConferencePlanning')
           title: 'De Zero à Héro avec Spring Boot',
           type: 'university',
           speaker: 'Léon Blum',
-          place: 'Grand Amphitheatre',
+          place: 'GA',
           from: '2015-04-12T08:00:00.000+0200',
           to: '2015-04-12T10:20:00.000+0200',
           icon: 'picture1.png'
@@ -45,7 +45,7 @@ angular.module('AngularConferencePlanning')
           title: 'Monitorer ses logs avec Elastic Search et Kibana',
           type: 'university',
           speaker: 'John Malkovich',
-          place: 'Grand Amphitheatre',
+          place: 'GA',
           from: '2015-04-12T11:00:00.000+0200',
           to: '2015-04-12T13:00:00.000+0200',
           icon: 'picture2.png'
@@ -54,7 +54,7 @@ angular.module('AngularConferencePlanning')
           title: 'Cloud direct with Docker',
           type: 'quickie',
           speaker: 'Miles Davis',
-          place: 'Amphitheatre A',
+          place: 'A',
           from: '2015-04-12T11:00:00.000+0200',
           to: '2015-04-12T12:00:00.000+0200',
           icon: 'picture3.png'
@@ -63,7 +63,7 @@ angular.module('AngularConferencePlanning')
           title: 'Docker on the rocks',
           type: 'hands-on',
           speaker: 'John Doe',
-          place: 'Amphitheatre B',
+          place: 'B',
           from: '2015-04-13T11:00:00.000+0200',
           to: '2015-04-13T12:00:00.000+0200',
           icon: 'picture3.png'
@@ -72,7 +72,7 @@ angular.module('AngularConferencePlanning')
           title: 'Deploy faster on GAE',
           type: 'hands-on',
           speaker: 'Richard Johns',
-          place: 'Amphitheatre A',
+          place: 'A',
           from: '2015-04-13T08:00:00.000+0200',
           to: '2015-04-13T11:30:00.000+0200',
           icon: 'picture3.png'
@@ -81,7 +81,7 @@ angular.module('AngularConferencePlanning')
           title: 'Marionette for dumies',
           type: 'university',
           speaker: 'John Doe',
-          place: 'Grand Amphitheatre',
+          place: 'GA',
           from: '2015-04-13T08:00:00.000+0200',
           to: '2015-04-13T12:00:00.000+0200',
           icon: 'picture3.png'
@@ -95,3 +95,6 @@ angular.module('AngularConferencePlanning')
       }
     });
   });
+
+
+

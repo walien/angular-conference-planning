@@ -6,10 +6,10 @@
 }
 
 .y-scrollable {
+  position: relative;
   top: 0;
   width: 100%;
-  height: 100%;
-  padding-left: 145px;
+  padding-left: 60px;
   overflow: auto;
 }
 
@@ -20,17 +20,16 @@
 .axes-y {
   white-space: nowrap;
   margin-bottom: 10px;
-  margin-left: 4px;
 }
 
 .axes-x {
-  position: relative;
   margin-left: -145px;
 }
 
 .axes-w {
     position: absolute;
     left: 0;
+    bottom: 0;
 }
 
 .date-picker {
@@ -93,16 +92,13 @@
 .col-place:first-child {
     margin-top: -15px !important ;
 }
-.lane .event:first-child {
-  margin-left: 170px !important;
-}
 
 .place {
   position: relative;
   display: block;
   min-height: 40px;
-  width: 125px;
-  padding-top: 11px;
+  width: auto;
+  padding: 11px 10px 0 10px;
   background: #525657;
   text-align: center;
   color: white;
@@ -113,7 +109,7 @@
 .place:after {
   position: absolute;
   display: block;
-    content: '';
+  content: '';
   background: url('../images/arrow.png') no-repeat;
   height: 40px;
   width: 40px;
