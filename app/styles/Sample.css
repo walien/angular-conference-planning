@@ -1,3 +1,15 @@
+.keynote {
+  background-color: orange;
+  border: 0;
+  color: white;
+}
+
+.lunch {
+  background-color: darkgreen;
+  border: 0;
+  color: white;
+}
+
 .hands-on {
   background-color: #0092a1;
   border: 0;

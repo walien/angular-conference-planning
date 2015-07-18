@@ -23,6 +23,10 @@ angular
         templateUrl: 'views/Sample.html',
         controller: 'SampleCtrl'
       })
+      .when('/mobile', {
+        templateUrl: 'views/MobileSample.html',
+        controller: 'SampleCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
