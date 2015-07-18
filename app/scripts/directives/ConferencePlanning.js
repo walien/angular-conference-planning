@@ -54,7 +54,7 @@ angular.module('AngularConferencePlanning')
       // By default a slot of 3600 seconds is represented by 200px (may be configured)
       // 200 px => 3600 seconds
       // ?   px => { elapsedSeconds } seconds
-      return ((options.oneHourSlotSize * elapsedSeconds) / 3600) + 150;
+      return ((options.oneHourSlotSize * elapsedSeconds) / 3600) + 60;
     };
 
     var transform = function (_events) {

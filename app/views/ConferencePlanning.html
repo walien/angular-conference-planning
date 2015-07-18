@@ -8,10 +8,10 @@
           <span class="place">{{ place }}</span>
           <span class="arrow"></span>
       </div>
-    </div>    
+    </div>
 
     <div class="y-scrollable container">
-        
+
         <div class="axes-y">
           <div ng-style="{ 'minWidth': (options.oneHourSlotSize + 'px') }" class="time-slot" ng-repeat="hour in axes.X">
             {{ hour }}h
@@ -21,7 +21,7 @@
         <div class="axes-x">
 
             <div ng-repeat="(place, events) in lanes" class="lane">
-              <span  data-sr="enter left, hustle 20px" ng-repeat="event in events" class="event" ng-class="options.eventClasses(event)" ng-style="computeEventStyle(event)">
+              <span data-sr="enter left, hustle 20px" ng-repeat="event in events" class="event" ng-class="options.eventClasses(event)" ng-style="computeEventStyle(event)">
                   <div ng-transclude>
                     <!--Template provided by the user is inserted here-->
                   </div>
