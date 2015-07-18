@@ -1,7 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Dosis);
+
+.container-planning {
+  position: relative;
+  font-family: 'Dosis', sans-serif;
+}
+
 .y-scrollable {
-  overflow: auto;
+  position: relative;
+  top: 0;
   width: 100%;
-  height: 100%;
+  padding-left: 60px;
+  overflow: auto;
 }
 
 .no-scroll {
@@ -10,42 +19,113 @@
 
 .axes-y {
   white-space: nowrap;
-  margin-left: 150px;
+  margin-bottom: 10px;
 }
 
 .axes-x {
-  position: relative;
+  margin-left: -145px;
+}
+
+.axes-w {
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .date-picker {
-  padding-right: 10px;
+  border-radius: 100px;
+  padding: 5px 15px;
+  background: #ededed;
+  cursor: pointer;
+  font-size: 11px;
+  margin-right: 5px;
+}
+
+.date-picker:hover {
+  transition: 300ms;
+  background: #dc2e2e;
+}
+
+.date-picker a {
+  color: white;
 }
 
 .time-slot {
+  position: relative;
   display: inline-block;
-  border-radius: 3px;
   border: 1px grey solid;
   text-align: center;
   white-space: nowrap;
+  margin: 0 !important;
+  background: #525657;
+  color: white;
+  font-weight: bold;
+  border-radius: 0;
+}
+
+.time-slot:after {
+  position: absolute;
+  bottom: -13px;
+  content: '\25BC';
+  font-size: 15px;
+  color: #525657;
+  left: 92px;
 }
 
 .lane {
-  padding-bottom: 25px;
-  padding-top: 5px;
+  display: flex;
+  min-height: 40px;
+  margin: 5px 0px;
 }
 
-.events {
-  /*Nothing*/
+.col-place {
+  position: relative;
+  width: 155px;
+  height: 40px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+.col-place:first-child {
+  margin-top: -15px !important;
 }
 
 .place {
-  width: 150px;
+  position: relative;
+  display: block;
+  min-height: 40px;
+  width: auto;
+  padding: 11px 10px 0 10px;
+  background: #525657;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  z-index: 99999;
+}
+
+.place:after {
+  position: absolute;
+  display: block;
+  content: '';
+  background: url('../images/arrow.png') no-repeat;
+  height: 40px;
+  width: 40px;
+  right: -40px;
+  top: 0;
 }
 
 .event {
   left: 0;
   right: 0;
   position: absolute !important;
+  display: table-cell;
   border: 1px #0040D0 solid;
   border-radius: 3px;
+}
+
+.place-fix {
+  display: block;
+  z-index: 999999;
+  margin-bottom: 6px;
+  height: 39px;
 }

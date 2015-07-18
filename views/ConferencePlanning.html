@@ -1,34 +1,32 @@
-<div>
+<div class="container-planning">
 
-  <span ng-repeat="date in model.dates" class="date-picker"><a href="" ng-click="loadDate(date)">{{ date }}</a></span>
+    <span ng-repeat="date in model.dates" class="date-picker"><a href="" ng-click="loadDate(date)">{{ date }}</a></span>
 
-  <br/><br/>
-
-  <div class="y-scrollable">
-
-    <div class="axes-y">
-      <div ng-style="{ 'minWidth': (options.oneHourSlotSize + 'px') }" class="time-slot" ng-repeat="hour in axes.X">
-        {{ hour }}h
+    <br/><br/>
+    <div class="axes-w fixed">
+       <div class="place-fix" ng-repeat="(place, events) in lanes" >
+          <span class="place">{{ place }}</span>
+          <span class="arrow"></span>
       </div>
     </div>
 
-    <div class="axes-x">
+    <div class="y-scrollable container">
 
-      <div ng-repeat="(place, events) in lanes" class="lane">
-
-        <span class="place">{{ place }}</span>
-        <span ng-repeat="event in events" class="event" ng-class="options.eventClasses(event)" ng-style="computeEventStyle(event)">
-
-          <div ng-transclude>
-            <!--Template provided by the user is inserted here-->
+        <div class="axes-y">
+          <div ng-style="{ 'minWidth': (options.oneHourSlotSize + 'px') }" class="time-slot" ng-repeat="hour in axes.X">
+            {{ hour }}h
           </div>
+        </div>
 
-        </span>
+        <div class="axes-x">
 
-      </div>
-
+            <div ng-repeat="(place, events) in lanes" class="lane">
+              <span data-sr="enter left, hustle 20px" ng-repeat="event in events" class="event" ng-class="options.eventClasses(event)" ng-style="computeEventStyle(event)">
+                  <div ng-transclude>
+                    <!--Template provided by the user is inserted here-->
+                  </div>
+              </span>
+            </div>
+        </div>
     </div>
-
-  </div>
-
 </div>
