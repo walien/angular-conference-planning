@@ -1,0 +1,11 @@
+{
+  "name": "angular-conference-planning-sample",
+  "authors": [
+    "Elian Oriou <eoriou'at'gmail.com>"
+  ],
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  },
+  "appPath": "app"
+}
