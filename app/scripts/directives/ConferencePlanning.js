@@ -3,6 +3,35 @@
 angular.module('AngularConferencePlanning')
   .directive('conferencePlanning', function () {
 
+    // The template is inline for deployment reason...
+    var htmlTemplate = '' +
+      '<div class="container-planning">' +
+      '   <span ng-repeat="date in model.dates" class="date-picker"><a href="" ng-click="loadDate(date)">{{ date }}</a></span>' +
+      '   <br/><br/>' +
+      '   <div class="axes-w fixed">' +
+      '     <div class="place-fix" ng-repeat="(place, events) in lanes">' +
+      '       <span class="place">{{ place }}</span>' +
+      '       <span class="arrow"></span>' +
+      '     </div>' +
+      '   </div>' +
+      '   <div class="y-scrollable container">' +
+      '     <div class="axes-y">' +
+      '       <div ng-style="{ \'minWidth\': (options.oneHourSlotSize + \'px\') }" class="time-slot" ng-repeat="hour in axes.X">' +
+      '         {{ hour }}h' +
+      '       </div>' +
+      '     </div>' +
+      '     <div class="axes-x">' +
+      '       <div ng-repeat="(place, events) in lanes" class="lane">' +
+      '         <span data-sr="enter left, hustle 20px" ng-repeat="event in events" class="event" ng-class="options.eventClasses(event)" ng-style="computeEventStyle(event)">' +
+      '           <div ng-transclude>' +
+      '             <!--Template provided by the user is inserted here-->' +
+      '           </div>' +
+      '         </span>' +
+      '       </div>' +
+      '     </div>' +
+      '   </div>' +
+      '</div>';
+
     var throwInvalidEventDef = function (_event, cause) {
       throw new Error('invalid event definition (' + cause + ') => ' + JSON.stringify(_event));
     };
@@ -116,7 +145,7 @@ angular.module('AngularConferencePlanning')
         options: '='
       },
       restrict: 'EA',
-      templateUrl: 'views/ConferencePlanning.html',
+      template: htmlTemplate,
       transclude: true,
       controller: function ($scope) {
 
