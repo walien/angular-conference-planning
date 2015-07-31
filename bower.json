@@ -4,6 +4,7 @@
     "Elian Oriou <eoriou'at'gmail.com>"
   ],
   "version": "1.0.0",
+  "main": "dist/scripts/angular-conference-planning.dist.77920716.js",
   "dependencies": {
     "angular": "^1.3.0",
     "angular-touch": "^1.3.0",
