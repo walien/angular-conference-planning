@@ -3,6 +3,35 @@
 angular.module('AngularConferencePlanning')
   .directive('conferencePlanning', function () {
 
+    // The template is inline for deployment reason...
+    var htmlTemplate = '' +
+      '<div class="container-planning">' +
+      '   <span ng-repeat="date in model.dates" class="date-picker"><a href="" ng-click="loadDate(date)">{{ date }}</a></span>' +
+      '   <br/><br/>' +
+      '   <div class="axes-w fixed">' +
+      '     <div class="place-fix" ng-repeat="(place, events) in lanes">' +
+      '       <span class="place">{{ place }}</span>' +
+      '       <span class="arrow"></span>' +
+      '     </div>' +
+      '   </div>' +
+      '   <div class="y-scrollable container">' +
+      '     <div class="axes-y">' +
+      '       <div ng-style="{ \'minWidth\': (options.oneHourSlotSize + \'px\') }" class="time-slot" ng-repeat="hour in axes.X">' +
+      '         {{ hour }}h' +
+      '       </div>' +
+      '     </div>' +
+      '     <div class="axes-x">' +
+      '       <div ng-repeat="(place, events) in lanes" class="lane">' +
+      '         <span data-sr="enter left, hustle 20px" ng-repeat="event in events" class="event" ng-class="options.eventClasses(event)" ng-style="computeEventStyle(event)">' +
+      '           <div ng-transclude>' +
+      '             <!--Template provided by the user is inserted here-->' +
+      '           </div>' +
+      '         </span>' +
+      '       </div>' +
+      '     </div>' +
+      '   </div>' +
+      '</div>';
+
     var throwInvalidEventDef = function (_event, cause) {
       throw new Error('invalid event definition (' + cause + ') => ' + JSON.stringify(_event));
     };
@@ -54,7 +83,7 @@ angular.module('AngularConferencePlanning')
       // By default a slot of 3600 seconds is represented by 200px (may be configured)
       // 200 px => 3600 seconds
       // ?   px => { elapsedSeconds } seconds
-      return ((options.oneHourSlotSize * elapsedSeconds) / 3600) + 150;
+      return ((options.oneHourSlotSize * elapsedSeconds) / 3600) + 60;
     };
 
     var transform = function (_events) {
@@ -116,7 +145,7 @@ angular.module('AngularConferencePlanning')
         options: '='
       },
       restrict: 'EA',
-      templateUrl: 'views/ConferencePlanning.html',
+      template: htmlTemplate,
       transclude: true,
       controller: function ($scope) {
 
